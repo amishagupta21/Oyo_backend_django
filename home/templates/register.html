@@ -1,0 +1,43 @@
+{% extends 'utils/base.html' %}
+{% block start%}
+
+  <div class="container form-container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card shadow">
+          <div class="card-body">
+            <h3 class="text-center mb-4">Register</h3>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+              </div>
+              <div class="mb-3">
+                <label for="password1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password1" placeholder="Create a password">
+              </div>
+              <div class="mb-3">
+                <label for="password2" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="password2" placeholder="Re-enter your password">
+              </div>
+              <button type="submit" class="btn btn-success w-100">Register</button>
+              <div class="text-center mt-3">
+                <small>Already have an account? <a href="login.html">Login</a></small>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/amishagupta21/Oyo_backend_django.git
+git push -u origin main
