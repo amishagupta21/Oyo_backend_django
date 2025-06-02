@@ -1,0 +1,66 @@
+{% extends 'utils/base.html' %}
+{% block start %}
+
+<style>
+  .oyo-theme {
+    color: #d3232a;
+  }
+
+  .btn-oyo {
+    background-color: #d3232a;
+    color: white;
+    border: none;
+  }
+
+  .btn-oyo:hover {
+    background-color: #b71c1c;
+  }
+
+  .card {
+    border-top: 5px solid #d3232a;
+  }
+</style>
+
+<div class="container form-container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h3 class="text-center mb-4 oyo-theme">Create an Account</h3>
+          <form method="POST">
+              {% include "utils/alerts.html" %}
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="first_name" class="form-label">First Name</label>
+              <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Enter your first name" required>
+            </div>
+            <div class="mb-3">
+              <label for="last_name" class="form-label">Last Name</label>
+              <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Enter your last name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+             <div class="mb-3">
+              <label for="phone_number" class="form-label">Phone Number</label>
+              <input type="number" name="phone_number" class="form-control" id="phone_number" placeholder="Enter your Phone Number" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="password" placeholder="Create a password" required>
+            </div>
+            <button type="submit" class="btn btn-oyo w-100">Register</button>
+            <!-- <div class="text-center mt-3">
+              <small>Already have an account?
+                <a href="{% url 'login_page' %}" class="text-danger">Login here</a>
+              </small>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

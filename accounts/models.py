@@ -4,14 +4,16 @@ from django.contrib.auth.models import User
 class HotelUser(User):
       phone_number = models.CharField(max_length=15,unique=True)
       profile_photo = models.ImageField(upload_to='profile')
-      email_otp = models.CharField(max_length=100, null=True,blank=True)
+      email_token = models.CharField(max_length=100, null=True,blank=True)
       otp = models.CharField(max_length=10, null=True, blank=True)
+      is_verified=models.BooleanField(default=False)
 
 class HotelVendor(User):
       phone_number = models.CharField(max_length=15,unique=True)
       profile_photo = models.ImageField(upload_to='profile')
-      email_otp = models.CharField(max_length=100, null=True,blank=True)
+      email_token = models.CharField(max_length=100, null=True,blank=True)
       otp = models.CharField(max_length=10, null=True, blank=True)
+      is_verified=models.BooleanField(default=False)
       
 class Ammenites(models.Model):
       name=models.CharField(max_length=100)
